@@ -6,8 +6,16 @@ import java.util.Vector;
 import java.util.stream.Collector;
 import java.util.stream.Collector.Characteristics;
 
-public class ToListCollector {
+/**
+ * {@link ToListCollectors} is used to create a Collection 
+ * {@link Collector} that accepts initial capacity.
+ * 
+ * */
+public final class ToListCollectors {
 
+	/**
+	 * @param <T> The type of input elements for the new collector
+	 * */
 	public static <T> Collector<T, ?, List<T>> toArrayList(
 			final int initialCapacity, 
 			final Characteristics... characteristics) {
@@ -19,7 +27,7 @@ public class ToListCollector {
 						characteristics);
 	}
 	
-	public static <T> Collector<T, ?, List<T>> toLinkedList(
+	public static <T> Collector<T, ?, List<T>> toVector(
 			final int initialCapacity, 
 			final Characteristics... characteristics) {
 		
