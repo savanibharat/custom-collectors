@@ -1,4 +1,4 @@
-package com.codingopus.custom.collectors;
+package com.codingopus.collection.custom.collectors;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ public final class ToSetCollectors {
 			final Characteristics... characteristics) {
 		
 		return
-				CollectionCollector.toUnOrderedCollection(
+				CollectionCollector.toOrderedCollection(
 						initialCapacity, 
 						LinkedHashSet::new, 
 						characteristics);
@@ -38,7 +38,7 @@ public final class ToSetCollectors {
 	 * {@link Comparable} interface.
 	 * */
 	public static <T> Collector<T, ?, NavigableSet<T>> toTreeSet(
-			final Characteristics... characteristics){
+			final Characteristics... characteristics) {
 		
 		return 
 				CollectionCollector.toCollection(
@@ -52,7 +52,7 @@ public final class ToSetCollectors {
 	 * */
 	public static <T> Collector<T, ?, NavigableSet<T>> toTreeSet(
 			final Comparator<? super T> comparator,
-			final Characteristics... characteristics){
+			final Characteristics... characteristics) {
 		
 		return 
 				CollectionCollector.toCollection(

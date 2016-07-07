@@ -1,4 +1,4 @@
-package com.codingopus.custom.collectors;
+package com.codingopus.collection.custom.collectors;
 
 import java.util.ArrayList;
 import java.util.List;

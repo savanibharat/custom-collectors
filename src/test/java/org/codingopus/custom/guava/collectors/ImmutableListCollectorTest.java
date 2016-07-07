@@ -3,9 +3,10 @@ package org.codingopus.custom.guava.collectors;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import com.codingopus.custom.guava.collectors.ImmutableListCollector;
+import com.codingopus.collectors.CustomCollectors;
 import com.google.common.collect.ImmutableCollection;
 import com.google.common.collect.ImmutableList;
 
@@ -20,12 +21,12 @@ public class ImmutableListCollectorTest {
 			names.add(i+"");
 		}
 		
-		ImmutableCollection<String> str = 
+		ImmutableList<String> str = 
 				names.parallelStream()
-					 .collect(new ImmutableListCollector<>());
+					 .collect(CustomCollectors.toImmutableList());
 		
-		System.out.println(str instanceof ImmutableCollection);
-		System.out.println(str instanceof ImmutableList);
+		Assert.assertTrue(str instanceof ImmutableCollection);
+		Assert.assertTrue(str instanceof ImmutableList);
 	}
 	
 	

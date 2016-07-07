@@ -1,4 +1,4 @@
-package com.codingopus.custom.collectors;
+package com.codingopus.collection.custom.collectors;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +19,7 @@ public final class CollectionCollector {
 	static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(
 			final Supplier<C> supplierFactory, 
 			final Characteristics... characteristics) {
-		
+
 		return 
 				Collector.of(
 						supplierFactory, 
@@ -44,13 +44,7 @@ public final class CollectionCollector {
 			final IntFunction<C> sizedFactory, 
 			final Characteristics... characteristics) {
 		
-		//return toCollection(() -> sizedFactory.apply(initialCapacity), characteristics);
-		return toCollection(new Supplier<C>() {
-			@Override
-			public C get() {
-				return sizedFactory.apply(initialCapacity);
-			}
-		}, characteristics);
+		return toCollection(() -> sizedFactory.apply(initialCapacity), characteristics);
 	}
 	
 	static <T, C extends Collection<T>> Collector<T, ?, C>  toUnOrderedCollection(

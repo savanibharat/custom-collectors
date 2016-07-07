@@ -13,65 +13,46 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mutabilitydetector.unittesting.MutabilityAssert;
 
-import com.codingopus.custom.collectors.ToSetCollectors;
+import com.codingopus.collection.custom.collectors.ToSetCollectors;
 
 public class ToSetCollectorsTest {
-	List<String> names = Arrays.asList("John", "Jane", "Markus", "Tim");
+	
+	final List<String> list = Arrays.asList("John", "Jane", "Markus", "Tim");
+	
+	final Set<String> hashSet = new HashSet<>(list);
 
-	@Test
-	public void testHashSetNotNull() {
-		Set<String> setWithInitialCapacity = names.stream()
-				.collect(ToSetCollectors.toHashSet(20, Characteristics.UNORDERED));
-		Assert.assertNotNull(setWithInitialCapacity);
-	}
+	final NavigableSet<String> treeSet = new TreeSet<>(list);
+	
+	final Set<String> linkedHashSet = new LinkedHashSet<>(list);
+	
 	
 	@Test
-	public void testReturnsHashSet() {
-		Set<String> setWithInitialCapacity = names.stream()
-				.collect(ToSetCollectors.toHashSet(20, Characteristics.UNORDERED));
-		Assert.assertTrue(setWithInitialCapacity instanceof HashSet);
+	public void testHashSetNotNull() {
+		
+		Set<String> setWithInitialCapacity = hashSet.stream()
+				.collect(ToSetCollectors.toHashSet(20, Characteristics.IDENTITY_FINISH));
+		Assert.assertEquals(hashSet, setWithInitialCapacity);
 	}
 	
 	@Test
 	public void testLinkedHashSetNotNull(){
-		Set<String> setWithInitialCapacity = names.stream()
+		Set<String> setWithInitialCapacity = linkedHashSet.stream()
 				.collect(ToSetCollectors.toLinkedHashSet(20, Characteristics.IDENTITY_FINISH));
-		Assert.assertNotNull(setWithInitialCapacity);
-	}
-	
-	@Test
-	public void testReturnsLinkedHashSet(){
-		Set<String> setWithInitialCapacity = names.stream()
-				.collect(ToSetCollectors.toLinkedHashSet(20, Characteristics.IDENTITY_FINISH));
-		Assert.assertNotNull(setWithInitialCapacity instanceof LinkedHashSet);
+		Assert.assertEquals(linkedHashSet, setWithInitialCapacity);
 	}
 	
 	@Test
 	public void testTreeSetNotNull(){
-		NavigableSet<String> treeSet = names.stream()
+		NavigableSet<String> navigableSet = treeSet.stream()
 				.collect(ToSetCollectors.toTreeSet(Characteristics.IDENTITY_FINISH));
-		Assert.assertNotNull(treeSet);
-	}
-	
-	@Test
-	public void testReturnsTreeSet(){
-		NavigableSet<String> treeSet = names.stream()
-				.collect(ToSetCollectors.toTreeSet(Characteristics.IDENTITY_FINISH));
-		Assert.assertTrue(treeSet instanceof TreeSet);
+		Assert.assertEquals(treeSet, navigableSet);
 	}
 	
 	@Test
 	public void testTreeSetWithComparatorNotNull(){
-		NavigableSet<String> treeSet = names.stream()
+		NavigableSet<String> navigableSet = treeSet.stream()
 				.collect(ToSetCollectors.toTreeSet(String::compareTo, Characteristics.IDENTITY_FINISH));
-		Assert.assertNotNull(treeSet);
-	}
-	
-	@Test
-	public void testReturnsTreeSetWithComparator(){
-		NavigableSet<String> treeSet = names.stream()
-				.collect(ToSetCollectors.toTreeSet(Characteristics.IDENTITY_FINISH));
-		Assert.assertTrue(treeSet instanceof TreeSet);
+		Assert.assertEquals(treeSet, navigableSet);
 	}
 	
 	@Test

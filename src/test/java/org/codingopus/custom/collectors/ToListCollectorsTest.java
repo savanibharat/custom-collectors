@@ -8,13 +8,13 @@ import java.util.stream.Collector.Characteristics;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mutabilitydetector.unittesting.MutabilityAssert;
 
-import com.codingopus.custom.collectors.ToListCollectors;
+import com.codingopus.collection.custom.collectors.ToListCollectors;
 
 public class ToListCollectorsTest {
 
-	List<String> names = Arrays.asList("John", "Jane", "Markus", "Tim");
+	final List<String> names = Arrays.asList("John", "Jane", "Markus", "Tim");
+	final String listAsString = names.toString();
 
 	@Test
 	public void testArrayListNotNull() {
@@ -22,7 +22,14 @@ public class ToListCollectorsTest {
 				.collect(ToListCollectors.toArrayList(10, Characteristics.IDENTITY_FINISH));
 		Assert.assertNotNull(listWithInitialCapacity);
 	}
-
+	
+	@Test
+	public void testArrayListWithCapacity() {
+		List<String> listWithInitialCapacity = names.stream()
+				.collect(ToListCollectors.toArrayList(10, Characteristics.IDENTITY_FINISH));
+		Assert.assertEquals(listAsString, listWithInitialCapacity.toString());
+	}
+	
 	@Test
 	public void testReturnsArrayList() {
 		List<String> listWithInitialCapacity = names.stream()
@@ -31,12 +38,19 @@ public class ToListCollectorsTest {
 	}
 
 	@Test
-	public void testLinkedListNotNull() {
+	public void testVectorNotNull() {
 		List<String> listWithInitialCapacity = names.stream()
 				.collect(ToListCollectors.toVector(10, Characteristics.IDENTITY_FINISH));
 		Assert.assertNotNull(listWithInitialCapacity);
 	}
 
+	@Test
+	public void testVectorWithCapacity() {
+		List<String> listWithInitialCapacity = names.stream()
+				.collect(ToListCollectors.toVector(10, Characteristics.IDENTITY_FINISH));
+		Assert.assertEquals(listAsString, listWithInitialCapacity.toString());
+	}
+	
 	@Test
 	public void testReturnsVector() {
 		List<String> listWithInitialCapacity = names.stream()
@@ -44,9 +58,4 @@ public class ToListCollectorsTest {
 		Assert.assertTrue(listWithInitialCapacity instanceof Vector);
 	}
 	
-	@Test
-	public void testToListCollectorImmutable(){
-		MutabilityAssert.assertImmutable(ToListCollectors.class);
-	}
-
 }

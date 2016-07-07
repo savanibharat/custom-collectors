@@ -1,14 +1,21 @@
 package com.codingopus.custom.guava.collectors;
 
-import java.util.function.Supplier;
+import java.util.stream.Collector;
 
-import com.google.common.collect.ImmutableCollection.Builder;
 import com.google.common.collect.ImmutableMultiset;
 
-public class ImmutableMultisetCollector<T> extends ImmutableCollectionCollector<T>{
-
-	@Override
-	public Supplier<Builder<T>> supplier() {
-		return ImmutableMultiset::builder;
+public final class ImmutableMultisetCollector<T> {
+	
+	public static <T> Collector<T, ImmutableMultiset.Builder<T>, ImmutableMultiset<T>>
+	toSetCollector() {
+		
+		return 
+				Collector.of(
+						ImmutableMultiset.Builder<T>::new,
+						ImmutableMultiset.Builder<T>::add,
+						(l, r) -> l.addAll(r.build()),
+			            ImmutableMultiset.Builder<T>::build,
+			            Collector.Characteristics.UNORDERED);
 	}
+	
 }

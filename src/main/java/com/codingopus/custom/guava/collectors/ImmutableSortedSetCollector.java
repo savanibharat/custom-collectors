@@ -1,22 +1,19 @@
 package com.codingopus.custom.guava.collectors;
 
-import java.util.function.Supplier;
+import java.util.stream.Collector;
 
-import com.google.common.collect.ImmutableCollection;
-import com.google.common.collect.ImmutableCollection.Builder;
 import com.google.common.collect.ImmutableSortedSet;
 
-public class ImmutableSortedSetCollector<T extends Comparable<?>> 
-									extends ImmutableCollectionCollector<T> {
+public final class ImmutableSortedSetCollector<T extends Comparable<?>> {
 
-	@Override
-	public Supplier<Builder<T>> supplier() {
-		//return ImmutableSortedSet::naturalOrder;
-		return new Supplier<ImmutableCollection.Builder<T>>() {
-			@Override
-			public Builder<T> get() {
-				return ImmutableSortedSet.naturalOrder();
-			}
-		};
+	public static <T extends Comparable<?>>
+	Collector<T, ImmutableSortedSet.Builder<T>, ImmutableSortedSet<T>>
+	toImmutableSortedSetCollector() {
+		return 
+				Collector.of(
+						ImmutableSortedSet::naturalOrder, 
+						(c, v) -> c.add(v),
+						(c1, c2) -> c1.addAll(c2.build()),
+						ImmutableSortedSet.Builder<T>::build);
 	}
 }
