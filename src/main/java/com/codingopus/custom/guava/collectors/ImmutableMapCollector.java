@@ -26,7 +26,8 @@ public final class ImmutableMapCollector<T, K, V> {
 	        				(map, val) -> map.put(keyExtractor.apply(val), valueExtractor.apply(val)),
 	        				(left, right) -> left.putAll(right.build()),
 	        				ImmutableMap.Builder<K, V>::build,
-	        				Characteristics.CONCURRENT);
+	        				Characteristics.CONCURRENT
+	        			);
 	    }
 
 }

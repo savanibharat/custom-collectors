@@ -48,30 +48,27 @@ public class CustomCollectors {
 	}
 	
 	public static <T> Collector<T, ?, Set<T>> toHashSet(
-			final int initialCapacity, 
-			final Characteristics... characteristics) {
+			final int initialCapacity) {
 		
-		return ToSetCollectors.toHashSet(initialCapacity, characteristics);
+		return ToSetCollectors.toHashSet(initialCapacity);
 	}
 	
 	public static <T> Collector<T, ?, Set<T>> toLinkedHashSet(
-			final int initialCapacity, 
-			final Characteristics... characteristics) {
+			final int initialCapacity) {
 		
-		return ToSetCollectors.toLinkedHashSet(initialCapacity, characteristics);
+		return ToSetCollectors.toLinkedHashSet(initialCapacity);
 	}
 	
 	public static <T> Collector<T, ?, NavigableSet<T>> toTreeSet(
 			final Characteristics... characteristics) {
 		
-		return ToSetCollectors.toTreeSet(characteristics);
+		return ToSetCollectors.toTreeSet();
 	}
 
 	public static <T> Collector<T, ?, NavigableSet<T>> toTreeSet(
-			final Comparator<? super T> comparator,
-			final Characteristics... characteristics) {
+			final Comparator<? super T> comparator) {
 		
-		return ToSetCollectors.toTreeSet(comparator, characteristics);
+		return ToSetCollectors.toTreeSet(comparator);
 	}
 	
 	public static <T, K> Collector<T, ?, ArrayListMultimap<K, T>>

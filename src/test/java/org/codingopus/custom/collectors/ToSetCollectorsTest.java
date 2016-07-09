@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collector.Characteristics;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -30,28 +29,28 @@ public class ToSetCollectorsTest {
 	public void testHashSetNotNull() {
 		
 		Set<String> setWithInitialCapacity = hashSet.stream()
-				.collect(ToSetCollectors.toHashSet(20, Characteristics.IDENTITY_FINISH));
+				.collect(ToSetCollectors.toHashSet(20));
 		Assert.assertEquals(hashSet, setWithInitialCapacity);
 	}
 	
 	@Test
 	public void testLinkedHashSetNotNull(){
 		Set<String> setWithInitialCapacity = linkedHashSet.stream()
-				.collect(ToSetCollectors.toLinkedHashSet(20, Characteristics.IDENTITY_FINISH));
+				.collect(ToSetCollectors.toLinkedHashSet(20));
 		Assert.assertEquals(linkedHashSet, setWithInitialCapacity);
 	}
 	
 	@Test
 	public void testTreeSetNotNull(){
 		NavigableSet<String> navigableSet = treeSet.stream()
-				.collect(ToSetCollectors.toTreeSet(Characteristics.IDENTITY_FINISH));
+				.collect(ToSetCollectors.toTreeSet());
 		Assert.assertEquals(treeSet, navigableSet);
 	}
 	
 	@Test
 	public void testTreeSetWithComparatorNotNull(){
 		NavigableSet<String> navigableSet = treeSet.stream()
-				.collect(ToSetCollectors.toTreeSet(String::compareTo, Characteristics.IDENTITY_FINISH));
+				.collect(ToSetCollectors.toTreeSet(String::compareTo));
 		Assert.assertEquals(treeSet, navigableSet);
 	}
 	

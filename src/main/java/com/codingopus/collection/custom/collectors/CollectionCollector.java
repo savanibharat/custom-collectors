@@ -2,6 +2,8 @@ package com.codingopus.collection.custom.collectors;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
+import java.util.function.BiConsumer;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
@@ -18,7 +20,7 @@ public final class CollectionCollector {
 	 * */
 	static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(
 			final Supplier<C> supplierFactory, 
-			final Characteristics... characteristics) {
+			final Set<Collector.Characteristics> characteristics) {
 
 		return 
 				Collector.of(
@@ -28,31 +30,23 @@ public final class CollectionCollector {
 							t.addAll(u);
 							return t;
 						}, 
-						characteristics);
+						characteristics.toArray(new Characteristics[0]));
 	}
 
 	/**
 	 * This method accepts initial capacity as int-valued argument.
+	 * Example:
 	 * We use this argument to create new {@link ArrayList} using
 	 * {@link ArrayList#ArrayList(int)} constructor.
 	 * 
 	 * @param T The type of input elements for the new collector
 	 * @param C The type of {@link Collection}
 	 * */
-	static <T, C extends Collection<T>> Collector<T, ?, C>  toOrderedCollection(
+	static <T, C extends Collection<T>> Collector<T, ?, C>  toCollection(
 			final int initialCapacity, 
 			final IntFunction<C> sizedFactory, 
-			final Characteristics... characteristics) {
+			final Set<Collector.Characteristics> characteristics) {
 		
 		return toCollection(() -> sizedFactory.apply(initialCapacity), characteristics);
 	}
-	
-	static <T, C extends Collection<T>> Collector<T, ?, C>  toUnOrderedCollection(
-			final int initialCapacity, 
-			final IntFunction<C> sizedFactory, 
-			final Characteristics... characteristics) {
-		
-		return toCollection(() -> sizedFactory.apply(initialCapacity), characteristics);
-	}
-	
 }

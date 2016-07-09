@@ -11,10 +11,11 @@ public final class ImmutableListCollector<T> {
 		
 		return 
 				Collector.of(
-				ImmutableList.Builder<T>::new, 
-				ImmutableList.Builder<T>::add, 
-				(left, right) -> left.addAll(right.build()),
-				ImmutableList.Builder<T>::build);
+						ImmutableList.Builder<T>::new, 
+						ImmutableList.Builder<T>::add, 
+						(left, right) -> left.addAll(right.build()),
+						ImmutableList.Builder<T>::build
+					);
 	}
 	
 }
