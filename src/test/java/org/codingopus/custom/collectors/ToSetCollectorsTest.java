@@ -1,5 +1,9 @@
 package org.codingopus.custom.collectors;
 
+import static com.codingopus.collectors.CustomCollectors.toHashSet;
+import static com.codingopus.collectors.CustomCollectors.toLinkedHashSet;
+import static com.codingopus.collectors.CustomCollectors.toTreeSet;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -10,7 +14,6 @@ import java.util.TreeSet;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mutabilitydetector.unittesting.MutabilityAssert;
 
 import com.codingopus.collection.custom.collectors.ToSetCollectors;
 
@@ -24,26 +27,25 @@ public class ToSetCollectorsTest {
 	
 	final Set<String> linkedHashSet = new LinkedHashSet<>(list);
 	
-	
 	@Test
-	public void testHashSetNotNull() {
-		
+	public void testHashSetWithInitialCapacity() {
+		 
 		Set<String> setWithInitialCapacity = hashSet.stream()
-				.collect(ToSetCollectors.toHashSet(20));
-		Assert.assertEquals(hashSet, setWithInitialCapacity);
+				.collect(toHashSet(20));
+		Assert.assertEquals(setWithInitialCapacity, hashSet);
 	}
 	
 	@Test
 	public void testLinkedHashSetNotNull(){
 		Set<String> setWithInitialCapacity = linkedHashSet.stream()
-				.collect(ToSetCollectors.toLinkedHashSet(20));
+				.collect(toLinkedHashSet(20));
 		Assert.assertEquals(linkedHashSet, setWithInitialCapacity);
 	}
 	
 	@Test
 	public void testTreeSetNotNull(){
 		NavigableSet<String> navigableSet = treeSet.stream()
-				.collect(ToSetCollectors.toTreeSet());
+				.collect(toTreeSet());
 		Assert.assertEquals(treeSet, navigableSet);
 	}
 	
@@ -53,10 +55,4 @@ public class ToSetCollectorsTest {
 				.collect(ToSetCollectors.toTreeSet(String::compareTo));
 		Assert.assertEquals(treeSet, navigableSet);
 	}
-	
-	@Test
-	public void testToSetCollectorImmutable(){
-		MutabilityAssert.assertImmutable(ToSetCollectors.class);
-	}
-
 }

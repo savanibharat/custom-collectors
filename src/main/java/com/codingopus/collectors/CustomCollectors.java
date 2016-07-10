@@ -16,18 +16,25 @@ import com.codingopus.custom.guava.collectors.ImmutableListCollector;
 import com.codingopus.custom.guava.collectors.ImmutableListMultimapCollector;
 import com.codingopus.custom.guava.collectors.ImmutableMapCollector;
 import com.codingopus.custom.guava.collectors.ImmutableMultisetCollector;
+import com.codingopus.custom.guava.collectors.ImmutableSetCollector;
 import com.codingopus.custom.guava.collectors.ImmutableSetMultimapCollector;
 import com.codingopus.custom.guava.collectors.ImmutableSortedMapCollector;
 import com.codingopus.custom.guava.collectors.ImmutableSortedMultisetCollector;
 import com.codingopus.custom.guava.collectors.ImmutableSortedSetCollector;
+import com.codingopus.custom.guava.collectors.LinkedHashMultimapCollector;
 import com.codingopus.custom.guava.collectors.LinkedListMultimapCollector;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMultiset;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSetMultimap;
 import com.google.common.collect.ImmutableSortedMap;
+import com.google.common.collect.ImmutableSortedMultiset;
+import com.google.common.collect.ImmutableSortedSet;
+import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.LinkedListMultimap;
 
 /**
@@ -36,15 +43,13 @@ import com.google.common.collect.LinkedListMultimap;
 public class CustomCollectors {
 	
 	public static <T> Collector<T, ?, List<T>> toArrayList(
-			final int initialCapacity, 
-			final Characteristics... characteristics) {
-		return ToListCollectors.toArrayList(initialCapacity, characteristics);
+			final int initialCapacity) {
+		return ToListCollectors.toArrayList(initialCapacity);
 	}
 	
 	public static <T> Collector<T, ?, List<T>> toVector(
-			final int initialCapacity, 
-			final Characteristics... characteristics) {
-		return ToListCollectors.toVector(initialCapacity, characteristics);
+			final int initialCapacity) {
+		return ToListCollectors.toVector(initialCapacity);
 	}
 	
 	public static <T> Collector<T, ?, Set<T>> toHashSet(
@@ -108,32 +113,33 @@ public class CustomCollectors {
 		return ImmutableListCollector.toListCollector();
 	}
 	
-//	/**
-//	 * @return {@link ImmutableSetCollector}
-//	 */
-//	public static <T> Collector<T, ?, ImmutableSet<T>> toImmutableSet() {
-//		return new ImmutableSetCollector<T>();
-//	}
+	/**
+	 * @return {@link ImmutableSetCollector}
+	 */
+	public static <T> Collector<T, ?, ImmutableSet<T>> toImmutableSet() {
+		return ImmutableSetCollector.toSetCollector();
+	}
 	
 	/**
 	 * @return {@link ImmutableMultisetCollector}
 	 */
-	public static <E> ImmutableMultisetCollector<E> toImmutableMultiset() {
-		return new ImmutableMultisetCollector<>();
+	public static <T> Collector<T, ImmutableMultiset.Builder<T>, ImmutableMultiset<T>>
+	toImmutableMultisetCollector()  {
+		return ImmutableMultisetCollector.toImmutableMultisetCollector();
 	}
 	
-	/**
-	 * @return {@link ImmutableSortedMultisetCollector}
-	 */
-	public static <E extends Comparable<E>> ImmutableSortedMultisetCollector<E> toImmutableSortedMultiset() {
-		return new ImmutableSortedMultisetCollector<>();
+	public static <T extends Comparable<?>>
+	Collector<T, ImmutableSortedMultiset.Builder<T>, ImmutableSortedMultiset<T>>
+	toImmutableSortedMultisetCollector(){
+		
+		return ImmutableSortedMultisetCollector.toImmutableSortedMultisetCollector();
+		
 	}
 	
-	/**
-	 * @return {@link ImmutableSortedSetCollector}
-	 */
-	public static <E extends Comparable<?>> ImmutableSortedSetCollector<E> toImmutableSortedSetCollector() {
-		return new ImmutableSortedSetCollector<>();
+	public static <T extends Comparable<?>>
+	Collector<T, ImmutableSortedSet.Builder<T>, ImmutableSortedSet<T>>
+	toImmutableSortedSetCollector(){
+		return ImmutableSortedSetCollector.toImmutableSortedSetCollector();
 	}
 	
 	public static <T, K> Collector<T, ?, ImmutableListMultimap<K, T>> 
@@ -179,12 +185,12 @@ public class CustomCollectors {
 		
 		return ImmutableSetMultimapCollector.toImmutableSetMultimapCollector(keyExtractor, valueExtractor);
 	}
+	
 	public static <T, K extends Comparable<?>> Collector<T, ?, ImmutableSortedMap<K, T>> 
 	toImmutableSortedMap(
 	        final Function<? super T, ? extends K> keyExtractor) {
 		
 		return ImmutableSortedMapCollector.toImmutableSortedMap(keyExtractor);
-		
 	}
 	
 	public static <T, K extends Comparable<?>, V> Collector<T, ?, ImmutableSortedMap<K, V>> 
@@ -224,4 +230,20 @@ public class CustomCollectors {
 		
 		return LinkedListMultimapCollector.toLinkedListMultimap(keyExtractor, valueExtractor);
 	}
+	
+	public static <T, K> Collector<T, ?, LinkedHashMultimap<K, T>>
+	toLinkedHashMultimap(
+			final Function<? super T, ? extends K> keyExtractor) {
+		
+		return LinkedHashMultimapCollector.toLinkedHashMultimap(keyExtractor);
+	}
+	
+	public static <T, K, V> Collector<T, ?, LinkedHashMultimap<K, V>>
+	toLinkedHashMultimap(
+			final Function<? super T, ? extends K> keyExtractor,
+	        final Function<? super T, ? extends V> valueExtractor) {
+		
+		return LinkedHashMultimapCollector.toLinkedHashMultimap(keyExtractor, valueExtractor);
+	}
+	
 }

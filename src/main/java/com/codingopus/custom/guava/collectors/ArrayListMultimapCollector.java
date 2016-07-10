@@ -28,6 +28,6 @@ public final class ArrayListMultimapCollector<T, K, V> {
 							c1.putAll(c2);
 							return c1;
 						},
-						Characteristics.CONCURRENT);
+						Characteristics.IDENTITY_FINISH);
 	}
 }

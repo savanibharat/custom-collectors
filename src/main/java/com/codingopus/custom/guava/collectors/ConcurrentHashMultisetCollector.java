@@ -5,7 +5,7 @@ import java.util.stream.Collector.Characteristics;
 
 import com.google.common.collect.ConcurrentHashMultiset;
 
-public class ConcurrentHashMultisetCollector {
+public final class ConcurrentHashMultisetCollector {
 
 	public static <T> Collector<T, ConcurrentHashMultiset<T>, ConcurrentHashMultiset<T>>
 	toConcurrentHashMultisetCollector() {

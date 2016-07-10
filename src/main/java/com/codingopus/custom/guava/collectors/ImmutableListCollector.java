@@ -6,6 +6,12 @@ import com.google.common.collect.ImmutableList;
 
 public final class ImmutableListCollector<T> {
 	
+	/**
+	 * @returns a {@link Collector} that collects data in
+	 * {@link ImmutableList}.
+	 * 
+	 * @param <T> The type of input elements for the new collector.
+	 * */
 	public static <T> Collector<T, ImmutableList.Builder<T>, ImmutableList<T>>
 	toListCollector() {
 		
@@ -17,5 +23,4 @@ public final class ImmutableListCollector<T> {
 						ImmutableList.Builder<T>::build
 					);
 	}
-	
 }

@@ -3,7 +3,6 @@ package com.codingopus.collection.custom.collectors;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
-import java.util.function.BiConsumer;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
@@ -18,7 +17,7 @@ public final class CollectionCollector {
 	 * @param T The type of input elements for the new collector
 	 * @param C The type of {@link Collection}
 	 * */
-	static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(
+	public static <T, C extends Collection<T>> Collector<T, ?, C> toCollection(
 			final Supplier<C> supplierFactory, 
 			final Set<Collector.Characteristics> characteristics) {
 
@@ -36,13 +35,13 @@ public final class CollectionCollector {
 	/**
 	 * This method accepts initial capacity as int-valued argument.
 	 * Example:
-	 * We use this argument to create new {@link ArrayList} using
+	 * We can use this argument to create new {@link ArrayList} using
 	 * {@link ArrayList#ArrayList(int)} constructor.
 	 * 
 	 * @param T The type of input elements for the new collector
 	 * @param C The type of {@link Collection}
 	 * */
-	static <T, C extends Collection<T>> Collector<T, ?, C>  toCollection(
+	public static <T, C extends Collection<T>> Collector<T, ?, C>  toCollection(
 			final int initialCapacity, 
 			final IntFunction<C> sizedFactory, 
 			final Set<Collector.Characteristics> characteristics) {

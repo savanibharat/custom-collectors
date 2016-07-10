@@ -22,11 +22,11 @@ public class ImmutableListCollectorTest {
 		}
 		
 		ImmutableList<String> str = 
-				names.parallelStream()
+				names.stream()
 					 .collect(CustomCollectors.toImmutableList());
 		
-		Assert.assertTrue(str instanceof ImmutableCollection);
-		Assert.assertTrue(str instanceof ImmutableList);
+		
+		
 	}
 	
 	

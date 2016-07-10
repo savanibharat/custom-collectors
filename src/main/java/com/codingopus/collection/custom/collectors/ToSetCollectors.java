@@ -9,7 +9,6 @@ import java.util.NavigableSet;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collector;
-import java.util.stream.Collector.Characteristics;
 
 /**
  * {@link ToSetCollectors} is used to create {@link Collector}
@@ -88,7 +87,4 @@ public final class ToSetCollectors {
 						() -> new TreeSet<>(comparator),
 						CH_ID);
 	}
-	
-
-	
 }

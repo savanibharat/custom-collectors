@@ -7,7 +7,7 @@ import com.google.common.collect.ImmutableMultiset;
 public final class ImmutableMultisetCollector<T> {
 	
 	public static <T> Collector<T, ImmutableMultiset.Builder<T>, ImmutableMultiset<T>>
-	toSetCollector() {
+	toImmutableMultisetCollector() {
 		
 		return 
 				Collector.of(
