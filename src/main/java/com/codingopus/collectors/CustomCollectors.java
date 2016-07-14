@@ -10,19 +10,19 @@ import java.util.stream.Collector.Characteristics;
 
 import com.codingopus.collection.custom.collectors.ToListCollectors;
 import com.codingopus.collection.custom.collectors.ToSetCollectors;
-import com.codingopus.custom.guava.collectors.ArrayListMultimapCollector;
-import com.codingopus.custom.guava.collectors.HashMultimapCollector;
-import com.codingopus.custom.guava.collectors.ImmutableListCollector;
-import com.codingopus.custom.guava.collectors.ImmutableListMultimapCollector;
-import com.codingopus.custom.guava.collectors.ImmutableMapCollector;
-import com.codingopus.custom.guava.collectors.ImmutableMultisetCollector;
-import com.codingopus.custom.guava.collectors.ImmutableSetCollector;
-import com.codingopus.custom.guava.collectors.ImmutableSetMultimapCollector;
-import com.codingopus.custom.guava.collectors.ImmutableSortedMapCollector;
-import com.codingopus.custom.guava.collectors.ImmutableSortedMultisetCollector;
-import com.codingopus.custom.guava.collectors.ImmutableSortedSetCollector;
-import com.codingopus.custom.guava.collectors.LinkedHashMultimapCollector;
-import com.codingopus.custom.guava.collectors.LinkedListMultimapCollector;
+import com.codingopus.guava.custom.collectors.ArrayListMultimapCollector;
+import com.codingopus.guava.custom.collectors.HashMultimapCollector;
+import com.codingopus.guava.custom.collectors.ImmutableListCollector;
+import com.codingopus.guava.custom.collectors.ImmutableListMultimapCollector;
+import com.codingopus.guava.custom.collectors.ImmutableMapCollector;
+import com.codingopus.guava.custom.collectors.ImmutableMultisetCollector;
+import com.codingopus.guava.custom.collectors.ImmutableSetCollector;
+import com.codingopus.guava.custom.collectors.ImmutableSetMultimapCollector;
+import com.codingopus.guava.custom.collectors.ImmutableSortedMapCollector;
+import com.codingopus.guava.custom.collectors.ImmutableSortedMultisetCollector;
+import com.codingopus.guava.custom.collectors.ImmutableSortedSetCollector;
+import com.codingopus.guava.custom.collectors.LinkedHashMultimapCollector;
+import com.codingopus.guava.custom.collectors.LinkedListMultimapCollector;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableList;
@@ -137,9 +137,23 @@ public class CustomCollectors {
 	}
 	
 	public static <T extends Comparable<?>>
+	Collector<T, ImmutableSortedMultiset.Builder<T>, ImmutableSortedMultiset<T>>
+	toReverseImmutableSortedMultisetCollector() {
+		
+		return ImmutableSortedMultisetCollector.toReverseImmutableSortedMultisetCollector();
+		
+	}
+	
+	public static <T extends Comparable<?>>
 	Collector<T, ImmutableSortedSet.Builder<T>, ImmutableSortedSet<T>>
 	toImmutableSortedSetCollector(){
 		return ImmutableSortedSetCollector.toImmutableSortedSetCollector();
+	}
+	
+	public static <T extends Comparable<?>>
+	Collector<T, ImmutableSortedSet.Builder<T>, ImmutableSortedSet<T>>
+	toReverseImmutableSortedSetCollector(){
+		return ImmutableSortedSetCollector.toReverseImmutableSortedSetCollector();
 	}
 	
 	public static <T, K> Collector<T, ?, ImmutableListMultimap<K, T>> 
@@ -157,14 +171,14 @@ public class CustomCollectors {
 		return ImmutableListMultimapCollector.toImmutableListMultimapCollector(keyExtractor, valueExtractor);
 	}
 	
-	public static <T, K extends Comparable<?>> Collector<T, ?, ImmutableMap<K, T>> 
+	public static <T, K> Collector<T, ?, ImmutableMap<K, T>> 
 	toImmutableMap(
 	        final Function<? super T, ? extends K> keyExtractor) {
 		
 		return ImmutableMapCollector.toImmutableMap(keyExtractor);
 	}
 	
-	public static <T, K extends Comparable<?>, V> Collector<T, ?, ImmutableMap<K, V>> 
+	public static <T, K, V> Collector<T, ?, ImmutableMap<K, V>> 
 	toImmutableMap(
 	        final Function<? super T, ? extends K> keyExtractor,
 	        final Function<? super T, ? extends V> valueExtractor) {
