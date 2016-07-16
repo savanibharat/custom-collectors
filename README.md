@@ -66,7 +66,7 @@ Let us understand them one by one.
           
 ### Convenience Factory Methods for Collections and Map:
  1. Factory methods for creating List
-    * ```of()``` returns a ```List<>```
+    * ```Lists.of()``` returns a ```List<>```
         ```
         //returns immutable list containing no or zero(0) elements.
         List<Integer> list = Lists.of();
@@ -81,7 +81,7 @@ Let us understand them one by one.
         
         ```
  2. Factory methods for creating Set.
-    * ```of()``` returns ```HashSet<>```
+    * ```Sets.of()``` returns ```HashSet<>```
         ```
         
         //returns immutable set containing no or zero(0) elements.
@@ -95,7 +95,7 @@ Let us understand them one by one.
         
         .. and so on.
         ```
-    * ```ofOrdered()``` returns ```LinkedHashSet<>```
+    * ```Sets.ofOrdered()``` returns ```LinkedHashSet<>```
         ```
         
         //returns immutable set containing no or zero(0) elements.
@@ -109,7 +109,7 @@ Let us understand them one by one.
         
         .. and so on.
         ```
-    * ```ofSorted()``` returns ```TreeSet<>```
+    * ```Sets.ofSorted()``` returns ```TreeSet<>```
        ```
         
         //returns immutable set containing no or zero(0) elements.
@@ -124,9 +124,9 @@ Let us understand them one by one.
         .. and so on.
         ```
  3. Factory methods for creating Map.
-    * ```of()``` returns ```HashMap<>```
-    * ```ofOrdered()``` returns ```LinkedHashMap<>```
-    * ```ofSorted()``` returns ```TreeMap<>```
+    * ```Maps.of()``` returns ```HashMap<>```
+    * ```Maps.ofOrdered()``` returns ```LinkedHashMap<>```
+    * ```Maps.ofSorted()``` returns ```TreeMap<>```
           
    [(JEP 269)]: <http://openjdk.java.net/jeps/269>
    [Collectors]: <https://github.com/savanibharat/custom-collectors/blob/master/src/main/java/com/codingopus/collectors/CustomCollectors.java>
