@@ -68,15 +68,61 @@ Let us understand them one by one.
  1. Factory methods for creating List
     * of() returns a List<>
         ```
-        //returns Collections.unmodifiableList(..).
+        //returns immutable list containing no or zero(0) elements.
+        List<Integer> list = Lists.of();
+        
+        //returns immutable list containing 1 element.
+        List<Integer> list = Lists.of(1);
+        
+        //returns immutable list containing 2 elements.
         List<Integer> list = Lists.of(1, 2);
         
+        .. and so on.
         
         ```
  2. Factory methods for creating Set.
     * of() returns HashSet<>
+        ```
+        
+        //returns immutable set containing no or zero(0) elements.
+        Set<Integer> set = Sets.of()
+       
+        //returns immutable set containing 1 element.
+        Set<Integer> set = Sets.of(1);
+        
+        //returns immutable set containing 2 elements.
+        Set<Integer> set = Sets.of(1, 2);
+        
+        .. and so on.
+        ```
     * ofOrdered() returns LinkedHashSet<>
+        ```
+        
+        //returns immutable set containing no or zero(0) elements.
+        Set<Integer> set = Sets.ofOrdered()
+       
+        //returns immutable set containing 1 element.
+        Set<Integer> set = Sets.ofOrdered(1);
+        
+        //returns immutable set containing 2 elements.
+        Set<Integer> set = Sets.ofOrdered(1, 2);
+        
+        .. and so on.
+        ```
     * ofSorted() returns TreeSet<>
+       ```
+        
+        //returns immutable set containing no or zero(0) elements.
+        Set<Integer> set = Sets.ofSorted()
+       
+        //returns immutable set containing 1 element.
+        Set<Integer> set = Sets.ofSorted(1);
+        
+        //returns immutable set containing 2 elements.
+        Set<Integer> set = Sets.ofSorted(1, 2);
+        
+        .. and so on.
+        ```
  3. Factory methods for creating Map.
     * of() returns HashMap<>
     * ofOrdered() returns LinkedHashMap<>
