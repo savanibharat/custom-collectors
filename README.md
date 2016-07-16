@@ -78,4 +78,5 @@ Let us understand them one by one.
           
    [(JEP 269)]: <http://openjdk.java.net/jeps/269>
    [Collectors]: <https://github.com/savanibharat/custom-collectors/blob/master/src/main/java/com/codingopus/collectors/CustomCollectors.java>
+   [ReadMe Guide]: <https://guides.github.com/features/mastering-markdown/>
   
