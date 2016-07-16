@@ -233,7 +233,7 @@ public interface Sets {
 			final E e6, final E e7, final E e8, final E e9, final E e10,
 			final E e11, final E e12, final E... others){
 		
-		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11);
+		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12);
 		for (E element : others) {
 			Objects.requireNonNull(element);
 		}
@@ -464,7 +464,7 @@ public interface Sets {
 			final E e6, final E e7, final E e8, final E e9, final E e10,
 			final E e11, final E e12, final E... others){
 		
-		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11);
+		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12);
 		for (E element : others) {
 			Objects.requireNonNull(element);
 		}
@@ -695,7 +695,7 @@ public interface Sets {
 			final E e6, final E e7, final E e8, final E e9, final E e10,
 			final E e11, final E e12, final E... others){
 		
-		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11);
+		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12);
 		for (E element : others) {
 			Objects.requireNonNull(element);
 		}
