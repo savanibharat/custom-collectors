@@ -67,6 +67,12 @@ Let us understand them one by one.
 ### Convenience Factory Methods for Collections and Map:
  1. Factory methods for creating List
     * of() returns a List<>
+        ```
+        //returns Collections.unmodifiableList(..).
+        List<Integer> list = Lists.of(1, 2);
+        
+        
+        ```
  2. Factory methods for creating Set.
     * of() returns HashSet<>
     * ofOrdered() returns LinkedHashSet<>
