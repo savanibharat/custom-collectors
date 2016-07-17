@@ -62,10 +62,9 @@ Let us understand them one by one.
                                                                                 k -> k.getKey(), 
                                                                                 v -> v.getValue()));
           ```
-
           
-### Convenience Factory Methods for Collections and Map:
- 1. Factory methods for creating List
+### Convenience Factory Methods for Collections:
+ 1. Factory methods for creating ```List```.
     * ```Lists.of()``` returns a ```List<>```
         ```
         //returns immutable list containing no or zero(0) elements.
@@ -80,10 +79,9 @@ Let us understand them one by one.
         .. and so on.
         
         ```
- 2. Factory methods for creating Set.
+ 2. Factory methods for creating ```Set```.
     * ```Sets.of()``` returns ```HashSet<>```
         ```
-        
         //returns immutable set containing no or zero(0) elements.
         Set<Integer> set = Sets.of()
        
@@ -97,7 +95,6 @@ Let us understand them one by one.
         ```
     * ```Sets.ofOrdered()``` returns ```LinkedHashSet<>```
         ```
-        
         //returns immutable set containing no or zero(0) elements.
         Set<Integer> set = Sets.ofOrdered()
        
@@ -111,7 +108,6 @@ Let us understand them one by one.
         ```
     * ```Sets.ofSorted()``` returns ```TreeSet<>```
        ```
-        
         //returns immutable set containing no or zero(0) elements.
         Set<Integer> set = Sets.ofSorted()
        
@@ -123,11 +119,42 @@ Let us understand them one by one.
         
         .. and so on.
         ```
- 3. Factory methods for creating Map.
+
+### Convenience Factory Methods for Map:
+ 1. Factory methods for creating ```Map```.
     * ```Maps.of()``` returns ```HashMap<>```
+      ```
+      //returns immutable map containing no or zero(0) entries.
+      Map<Integer, Integer> map = Maps.of();
+      
+      //returns immutable map containing 1 entry.
+      Map<Integer, Integer> map = Maps.of(1, 1);
+      ```
     * ```Maps.ofOrdered()``` returns ```LinkedHashMap<>```
+       ```
+      //returns immutable map containing no or zero(0) entries.
+      Map<Integer, Integer> map = Maps.ofOrdered();
+      
+      //returns immutable map containing 1 entry.
+      Map<Integer, Integer> map = Maps.ofOrdered(1, 1);
+       ```
     * ```Maps.ofSorted()``` returns ```TreeMap<>```
-          
+       ```
+      //returns immutable map containing no or zero(0) entries.
+      Map<Integer, Integer> map = Maps.ofSorted();
+      
+      //returns immutable map containing 1 entry.
+      Map<Integer, Integer> map = Maps.ofSorted(1, 1);
+       ```
+       
+   * ```Maps.ofEntries``` returns ```HashMap<>```.
+      ```
+      Map<Character, Integer> map = Maps.ofEntries(Maps.entry('A', 65), Maps.entry('B', 66), Maps.entry('C', 67));
+      Map<Character, Integer> map = Maps.ofOrderedEntries(Maps.entry('A', 65), Maps.entry('B', 66), Maps.entry('C', 67));
+      Map<Character, Integer> map = Maps.ofSortedEntries(Maps.entry('A', 65), Maps.entry('B', 66), Maps.entry('C', 67));
+      ```
+
+
    [(JEP 269)]: <http://openjdk.java.net/jeps/269>
    [Collectors]: <https://github.com/savanibharat/custom-collectors/blob/master/src/main/java/com/codingopus/collectors/CustomCollectors.java>
    [ReadMe Guide]: <https://guides.github.com/features/mastering-markdown/>
