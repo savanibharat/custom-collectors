@@ -147,23 +147,28 @@ Let us understand them one by one.
       Map<Integer, Integer> map = Maps.ofSorted(1, 1);
        ```
        
-   * ```Maps.ofEntries``` returns ```HashMap<>```.
+    * ```Maps.ofEntries``` returns ```HashMap<>```.
      
-      ```
-      Map<Character, Integer> map = Maps.ofEntries(
-                                          Maps.entry('A', 65), 
-                                          Maps.entry('B', 66), 
-                                          Maps.entry('C', 67));
-      Map<Character, Integer> map = Maps.ofOrderedEntries(
-                                          Maps.entry('A', 65), 
-                                          Maps.entry('B', 66), 
-                                          Maps.entry('C', 67));
-      Map<Character, Integer> map = Maps.ofSortedEntries(
-                                          Maps.entry('A', 65), 
-                                          Maps.entry('B', 66), 
-                                          Maps.entry('C', 67));
-      ```
+       ```
+       Map<Character, Integer> map = Maps.ofEntries(
+                                           Maps.entry('A', 65), 
+                                           Maps.entry('B', 66), 
+                                           Maps.entry('C', 67));
+       Map<Character, Integer> map = Maps.ofOrderedEntries(
+                                           Maps.entry('A', 65), 
+                                           Maps.entry('B', 66), 
+                                           Maps.entry('C', 67));
+       Map<Character, Integer> map = Maps.ofSortedEntries(
+                                           Maps.entry('A', 65), 
+                                           Maps.entry('B', 66), 
+                                           Maps.entry('C', 67));
+       ```
 
+Enjoy.
+
+TODO:
+* Add additional operations for java.util.Optional.
+* Check if we can add better methods for Collectors.
 
    [(JEP 269)]: <http://openjdk.java.net/jeps/269>
    [Collectors]: <https://github.com/savanibharat/custom-collectors/blob/master/src/main/java/com/codingopus/collectors/CustomCollectors.java>
