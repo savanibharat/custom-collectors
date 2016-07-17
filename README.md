@@ -62,20 +62,114 @@ Let us understand them one by one.
                                                                                 k -> k.getKey(), 
                                                                                 v -> v.getValue()));
           ```
+          
+### Convenience Factory Methods for Collections:
+ 1. Factory methods for creating ```List```.
+    * ```Lists.of()``` returns a ```List<>```
+        ```
+        //returns immutable list containing no or zero(0) elements.
+        List<Integer> list = Lists.of();
+        
+        //returns immutable list containing 1 element.
+        List<Integer> list = Lists.of(1);
+        
+        //returns immutable list containing 2 elements.
+        List<Integer> list = Lists.of(1, 2);
+        
+        .. and so on.
+        
+        ```
+ 2. Factory methods for creating ```Set```.
+    * ```Sets.of()``` returns ```HashSet<>```
+        ```
+        //returns immutable set containing no or zero(0) elements.
+        Set<Integer> set = Sets.of()
+       
+        //returns immutable set containing 1 element.
+        Set<Integer> set = Sets.of(1);
+        
+        //returns immutable set containing 2 elements.
+        Set<Integer> set = Sets.of(1, 2);
+        
+        .. and so on.
+        ```
+    * ```Sets.ofOrdered()``` returns ```LinkedHashSet<>```
+        ```
+        //returns immutable set containing no or zero(0) elements.
+        Set<Integer> set = Sets.ofOrdered()
+       
+        //returns immutable set containing 1 element.
+        Set<Integer> set = Sets.ofOrdered(1);
+        
+        //returns immutable set containing 2 elements.
+        Set<Integer> set = Sets.ofOrdered(1, 2);
+        
+        .. and so on.
+        ```
+    * ```Sets.ofSorted()``` returns ```TreeSet<>```
+       ```
+        //returns immutable set containing no or zero(0) elements.
+        Set<Integer> set = Sets.ofSorted()
+       
+        //returns immutable set containing 1 element.
+        Set<Integer> set = Sets.ofSorted(1);
+        
+        //returns immutable set containing 2 elements.
+        Set<Integer> set = Sets.ofSorted(1, 2);
+        
+        .. and so on.
+        ```
 
-          
-### Convenience Factory Methods for Collections and Map:
- 1. Factory methods for creating List
-    * of() returns a List<>
- 2. Factory methods for creating Set.
-    * of() returns HashSet<>
-    * ofOrdered() returns LinkedHashSet<>
-    * ofSorted() returns TreeSet<>
- 3. Factory methods for creating Map.
-    * of() returns HashMap<>
-    * ofOrdered() returns LinkedHashMap<>
-    * ofSorted() returns TreeMap<>
-          
+### Convenience Factory Methods for Map:
+ 1. Factory methods for creating ```Map```.
+    * ```Maps.of()``` returns ```HashMap<>```
+      ```
+      //returns immutable map containing no or zero(0) entries.
+      Map<Integer, Integer> map = Maps.of();
+      
+      //returns immutable map containing 1 entry.
+      Map<Integer, Integer> map = Maps.of(1, 1);
+      ```
+    * ```Maps.ofOrdered()``` returns ```LinkedHashMap<>```
+       ```
+      //returns immutable map containing no or zero(0) entries.
+      Map<Integer, Integer> map = Maps.ofOrdered();
+      
+      //returns immutable map containing 1 entry.
+      Map<Integer, Integer> map = Maps.ofOrdered(1, 1);
+       ```
+    * ```Maps.ofSorted()``` returns ```TreeMap<>```
+       ```
+      //returns immutable map containing no or zero(0) entries.
+      Map<Integer, Integer> map = Maps.ofSorted();
+      
+      //returns immutable map containing 1 entry.
+      Map<Integer, Integer> map = Maps.ofSorted(1, 1);
+       ```
+       
+    * ```Maps.ofEntries``` returns ```HashMap<>```.
+     
+       ```
+       Map<Character, Integer> map = Maps.ofEntries(
+                                           Maps.entry('A', 65), 
+                                           Maps.entry('B', 66), 
+                                           Maps.entry('C', 67));
+       Map<Character, Integer> map = Maps.ofOrderedEntries(
+                                           Maps.entry('A', 65), 
+                                           Maps.entry('B', 66), 
+                                           Maps.entry('C', 67));
+       Map<Character, Integer> map = Maps.ofSortedEntries(
+                                           Maps.entry('A', 65), 
+                                           Maps.entry('B', 66), 
+                                           Maps.entry('C', 67));
+       ```
+
+Enjoy.
+
+TODO:
+* Add additional operations for java.util.Optional.
+* Check if we can add better methods for Collectors.
+
    [(JEP 269)]: <http://openjdk.java.net/jeps/269>
    [Collectors]: <https://github.com/savanibharat/custom-collectors/blob/master/src/main/java/com/codingopus/collectors/CustomCollectors.java>
    [ReadMe Guide]: <https://guides.github.com/features/mastering-markdown/>
