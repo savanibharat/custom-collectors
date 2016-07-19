@@ -27,7 +27,6 @@ import java.util.stream.Collector;
 /**
  * {@link ToListCollectors} is used to create a Collection 
  * {@link Collector} that accepts initial capacity.
- * 
  * */
 public final class ToListCollectors {
 
@@ -35,6 +34,12 @@ public final class ToListCollectors {
      = Collections.unmodifiableSet(EnumSet.of(Collector.Characteristics.IDENTITY_FINISH));
 	
 	/**
+	 * Returns a {@link Collector} that accumulates all input elements
+	 * in {@link List}. 
+	 * 
+	 * @return a {@code Collector} which collects all input elements 
+	 * into a {@code List} in encounter order.
+	 * 
 	 * @param <T> The type of input elements for the new collector
 	 * */
 	public static <T> Collector<T, ?, List<T>> toArrayList(
@@ -47,6 +52,15 @@ public final class ToListCollectors {
 						CH_ID);
 	}
 	
+	/**
+	 * Returns a {@link Collector} that accumulates all input elements
+	 * in {@link List}. 
+	 * 
+	 * @return a {@code Collector} which collects all input elements 
+	 * into a {@code List} in encounter order.
+	 * 
+	 * @param <T> The type of input elements for the new collector
+	 * */
 	public static <T> Collector<T, ?, List<T>> toVector(
 			final int initialCapacity) {
 		
