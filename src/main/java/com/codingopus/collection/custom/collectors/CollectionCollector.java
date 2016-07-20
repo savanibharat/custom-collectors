@@ -30,6 +30,8 @@ public final class CollectionCollector {
 	 * Creates a {@link Collector} of specified {@link Supplier} 
 	 * and {@link Characteristics}.
 	 * 
+	 * Low level 
+	 * 
 	 * @param T The type of input elements for the new collector
 	 * @param C The type of {@link Collection}
 	 * */
@@ -50,6 +52,7 @@ public final class CollectionCollector {
 
 	/**
 	 * This method accepts initial capacity as int-valued argument.
+	 * 
 	 * Example:
 	 * We can use this argument to create new {@link ArrayList} using
 	 * {@link ArrayList#ArrayList(int)} constructor.
