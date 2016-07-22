@@ -23,110 +23,286 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * JEP 269
+ * Make it convenient to create instances of collections 
+ * and maps with small numbers of elements, so as to ease 
+ * the pain of not having collection literals in the Java 
+ * programming language.
+ * */
 public interface Lists {
 
+	/**
+	 * Returns immutable List containing zero elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return an empty {@code List}
+	 * */
 	public static <E> List<E> of() {
 		return Collections.emptyList();
 	}
 	
+	/**
+	 * Returns immutable List containing one element.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 a single element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return an {@code List} containing specified element.
+	 * */
 	public static <E> List<E> of(
-			final E e1) {
+			E e1) {
 		
 		ObjectsNonNull.objectsNonNull(e1);
 		return Collections.singletonList(e1);
 	}
 	
+	/**
+	 * Returns immutable List containing two elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return an empty {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2) {
+			E e1, E e2) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2);
 		return Collections.unmodifiableList(
 				asList(e1, e2));
 	}
 
+	/**
+	 * Returns immutable List containing three elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3) {
+			E e1, E e2, E e3) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3));
 	}
 	
+	/**
+	 * Returns immutable List containing four elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4) {
+			E e1, E e2, E e3, E e4) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4);
 		return Collections.unmodifiableList(asList(e1, e2, e3, e4));
 	}
 	
+	/**
+	 * Returns immutable List containing five elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5) {
+			E e1, E e2, E e3, E e4, E e5) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5));
 	}
 	
+	/**
+	 * Returns immutable List containing six elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5, e6));
 	}
 	
+	/**
+	 * Returns immutable List containing seven elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @param e7 the seventh element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6, final E e7) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6, E e7) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5, e6, e7));
 	}
 	
+	/**
+	 * Returns immutable List containing eight elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @param e7 the seventh element
+	 * @param e8 the eighth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6, final E e7, final E e8) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6, E e7, E e8) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5, e6, e7, e8));
 	}
 	
+	/**
+	 * Returns immutable List containing nine elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @param e7 the seventh element
+	 * @param e8 the eighth element
+	 * @param e9 the ninth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6, final E e7, final E e8, final E e9) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6, E e7, E e8, E e9) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5, e6, e7, e8, e9));
 	}
 	
+	/**
+	 * Returns immutable List containing ten elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @param e7 the seventh element
+	 * @param e8 the eighth element
+	 * @param e9 the ninth element
+	 * @param e10 the tenth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6, final E e7, final E e8, final E e9, final E e10) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6, E e7, E e8, E e9, E e10) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10));
 	}
 	
+	/**
+	 * Returns immutable List containing eleven elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @param e7 the seventh element
+	 * @param e8 the eighth element
+	 * @param e9 the ninth element
+	 * @param e10 the tenth element
+	 * @param e11 the eleventh element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6, final E e7, final E e8, final E e9, final E e10,
-			final E e11) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6, E e7, E e8, E e9, E e10,
+			E e11) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11);
 		return Collections.unmodifiableList(
 				asList(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11));
 	}
 	
+	/**
+	 * Returns immutable List containing twelfth elements.
+	 * 
+	 * @param <E> the {@code List}'s element type
+	 * @param e1 the first element
+	 * @param e2 the second element
+	 * @param e3 the third element
+	 * @param e4 the fourth element
+	 * @param e5 the fifth element
+	 * @param e6 the sixth element
+	 * @param e7 the seventh element
+	 * @param e8 the eighth element
+	 * @param e9 the ninth element
+	 * @param e10 the tenth element
+	 * @param e11 the eleventh element
+	 * @param e12 the twelfth element
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return a {@code List} containing specified elements.
+	 * */
 	@SafeVarargs
 	public static <E> List<E> of(
-			final E e1, final E e2, final E e3, final E e4, final E e5,
-			final E e6, final E e7, final E e8, final E e9, final E e10,
-			final E e11, final E e12, final E... others) {
+			E e1, E e2, E e3, E e4, E e5,
+			E e6, E e7, E e8, E e9, E e10,
+			E e11, E e12, E... others) {
 		
 		ObjectsNonNull.objectsNonNull(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12);
 		for (E element : others) {

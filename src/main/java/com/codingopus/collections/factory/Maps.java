@@ -25,20 +25,60 @@ import java.util.Objects;
 import java.util.TreeMap;
 
 /**
- * Map.of Map.ofOrdered
- */
+ * JEP 269
+ * Make it convenient to create instances of collections 
+ * and maps with small numbers of elements, so as to ease 
+ * the pain of not having collection literals in the Java 
+ * programming language.
+ * 
+ * Maps provide static factories for 
+ * {@code HashMap} using factory {@code Maps#of(Object)}
+ * {@code LinkedHashMaps} using factory {@code Maps#ofOrdered(Object)}
+ * {@code TreeMaps} using factory {@code Maps#ofSorted(Object)}
+ * */
 public interface Maps {
 
+	/**
+	 * Returns immutable Map containing zero elements.
+	 * 
+	 * @param <E> the {@code Map}'s element type
+	 * @throws NullPointerException if an element is {@code null}
+	 * @return an empty {@code Map}
+	 * */
 	public static <K, V> Map<K, V> of() {
 		return Collections.emptyMap();
 	}
 
+	/**
+	 * Returns immutable Map containing one entry.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * 
+	 * @throws NullPointerException if key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1) {
 		ObjectsNonNull.objectsNonNull(k1, v1);
 		return Collections.singletonMap(k1, v1);
 	}
 
+	/**
+	 * Returns immutable Map containing two entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2) {
 
@@ -52,6 +92,21 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing three entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3) {
 
@@ -66,6 +121,23 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing four entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the four key
+	 * @param v4 the four value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4) {
 
@@ -81,6 +153,25 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing five entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the four key
+	 * @param v4 the four value
+	 * @param k5 the five key
+	 * @param v5 the five value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5) {
 
@@ -153,7 +244,7 @@ public interface Maps {
 		map.put(k5, v5);
 		map.put(k6, v6);
 		map.put(k7, v7);
-		map.put(k7, v8);
+		map.put(k8, v8);
 		if (map.size() != 8) {
 			throw new IllegalArgumentException("Duplicate keys.");
 		}
@@ -386,7 +477,7 @@ public interface Maps {
 		map.put(k5, v5);
 		map.put(k6, v6);
 		map.put(k7, v7);
-		map.put(k7, v8);
+		map.put(k8, v8);
 		if (map.size() != 8) {
 			throw new IllegalArgumentException("Duplicate keys.");
 		}
@@ -619,7 +710,7 @@ public interface Maps {
 		map.put(k5, v5);
 		map.put(k6, v6);
 		map.put(k7, v7);
-		map.put(k7, v8);
+		map.put(k8, v8);
 		if (map.size() != 8) {
 			throw new IllegalArgumentException("Duplicate keys.");
 		}
@@ -730,13 +821,28 @@ public interface Maps {
 
 	@SafeVarargs
 	public static <K, V> Map<K, V> ofEntries(Entry<K, V>... entries) {
+		return ofEntries(new HashMap<>(), entries);
+	}
+	
+	@SafeVarargs
+	public static <K, V> Map<K, V> ofOrderedEntries(Entry<K, V>... entries) {
+		return ofEntries(new LinkedHashMap<>(), entries);
+	}
+	
+	@SafeVarargs
+	public static <K, V> Map<K, V> ofSortedEntries(Entry<K, V>... entries) {
+		return ofEntries(new TreeMap<>(), entries);
+	}
 
+	@SafeVarargs
+	static <K, V> Map<K, V> ofEntries(Map<K, V> map, Entry<K, V>... entries) {
+		Objects.requireNonNull(map);
 		Objects.requireNonNull(entries);
-		Map<K, V> map = new HashMap<>();
 		for (Entry<K, V> entry : entries) {
 			map.put(
 					Objects.requireNonNull(entry.getKey()), 
-					Objects.requireNonNull(entry.getValue()));
+					Objects.requireNonNull(entry.getValue())
+				);
 		}
 
 		if (map.size() != entries.length) {
@@ -744,7 +850,7 @@ public interface Maps {
 		}
 		return Collections.unmodifiableMap(map);
 	}
-
+	
 	public static <K, V> Entry<K, V> entry(K k, V v) {
 		return new ImmutableMapEntry<K, V>(k, v);
 	}

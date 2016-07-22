@@ -40,10 +40,13 @@ public final class ToSetCollectors {
                                               Collector.Characteristics.IDENTITY_FINISH));
 	
 	/**
-	 * Create a {@link Collector} of type {@link HashSet}
-	 * with initial capacity.
+	 * Returns a {@link Collector} that accumulates all input elements
+	 * in {@link Set}. 
 	 * 
-	 * @param <T> type of input elements for new Collector
+	 * @return a {@code Collector} which collects all input elements 
+	 * into a {@code Set} in encounter order.
+	 * 
+	 * @param <T> The type of input elements for the new collector
 	 * */
 	public static <T> Collector<T, ?, Set<T>> toHashSet(
 			final int initialCapacity) {
@@ -56,10 +59,13 @@ public final class ToSetCollectors {
 	}
 	
 	/**
-	 * Create a {@link Collector} of type {@link LinkedHashSet}
-	 * with initial capacity.
+	 * Returns a {@link Collector} that accumulates all input elements
+	 * in {@link Set}. 
 	 * 
-	 * @param <T> type of input elements for new Collector
+	 * @return a {@code Collector} which collects all input elements 
+	 * into a {@code Set} in encounter order.
+	 * 
+	 * @param <T> The type of input elements for the new collector
 	 * */
 	public static <T> Collector<T, ?, Set<T>> toLinkedHashSet(
 			final int initialCapacity) {
@@ -72,12 +78,13 @@ public final class ToSetCollectors {
 	}
 	
 	/**
-	 * Creates a {@link Collector} of type {@link TreeSet}
+	 * Returns a {@link Collector} that accumulates all input elements
+	 * in {@link Set}. 
 	 * 
-	 * All elements inserted into implement the 
-	 * {@link Comparable} interface.
+	 * @return a {@code Collector} which collects all input elements 
+	 * into a {@code Set} in encounter order.
 	 * 
-	 * @param <T> type of input elements for new Collector
+	 * @param <T> The type of input elements for the new collector
 	 * */
 	public static <T> Collector<T, ?, NavigableSet<T>> toTreeSet() {
 		
@@ -88,12 +95,13 @@ public final class ToSetCollectors {
 	}
 	
 	/**
-	 * Create a {@link Collector} of type {@link TreeSet}
+	 * Returns a {@link Collector} that accumulates all input elements
+	 * in {@link Set}. 
 	 * 
-	 * All elements inserted into implement the 
-	 * {@link Comparator} interface.
+	 * @return a {@code Collector} which collects all input elements 
+	 * into a {@code Set} in encounter order.
 	 * 
-	 * @param <T> type of input elements of new Collector
+	 * @param <T> The type of input elements for the new collector
 	 * */
 	public static <T> Collector<T, ?, NavigableSet<T>> toTreeSet(
 			final Comparator<? super T> comparator) {
