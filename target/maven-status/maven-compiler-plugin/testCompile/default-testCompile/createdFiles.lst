@@ -1,1 +1,7 @@
-org\codingopus\custom\collectors\AppTest.class
+org\codingopus\custom\collectors\ToSetCollectorsTest.class
+org\codingopus\custom\collectors\CustomCollectorsTest.class
+org\codingopus\collections\factory\SetsTest.class
+org\codingopus\collections\factory\MapsTest.class
+org\codingopus\collections\factory\ListsTest.class
+org\codingopus\custom\collectors\AllDrivers.class
+org\codingopus\custom\collectors\ToListCollectorsTest.class
