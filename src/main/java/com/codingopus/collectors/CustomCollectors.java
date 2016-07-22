@@ -18,11 +18,13 @@ package com.codingopus.collectors;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.NavigableSet;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collector.Characteristics;
+import java.util.stream.Collectors;
 
 import com.codingopus.collection.custom.collectors.ToListCollectors;
 import com.codingopus.collection.custom.collectors.ToSetCollectors;
@@ -57,6 +59,18 @@ import com.google.common.collect.LinkedListMultimap;
  * Insert every collector here and test from here.
  * */
 public class CustomCollectors {
+	
+	public static <K, V> Collector<Map.Entry<K, V>, ?, ImmutableMap<K, V>> 
+	entriesToImmutableMap(){
+		
+		return CustomCollectors.toImmutableMap(Map.Entry::getKey, Map.Entry::getValue);
+	}
+	
+	public static <K, V> Collector<Map.Entry<K, V>, ?, Map<K, V>> 
+	entriesToMap(){
+		
+		return Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue);
+	}
 	
 	public static <T> Collector<T, ?, List<T>> toArrayList(
 			final int initialCapacity) {
@@ -105,6 +119,12 @@ public class CustomCollectors {
 		
 		return ArrayListMultimapCollector.toArrayListMultimap(keyExtractor, valueExtractor);
 	}
+	
+	//Need to investigate more.
+//	public static <T> Collector<T, ConcurrentHashMultiset<T>, ConcurrentHashMultiset<T>>
+//	toConcurrentHashMultisetCollector() {
+//		return ConcurrentHashMultisetCollector.toConcurrentHashMultisetCollector();
+//	}
 	
 	public static <T, K> Collector<T, ?, HashMultimap<K, T>>
 	toHashMultimap(
