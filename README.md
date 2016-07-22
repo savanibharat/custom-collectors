@@ -1,6 +1,6 @@
-# Project [NAME]
+# Java8-Enhancements
 
-[NAME] is a project born out of curiosity. This project currently consists of custom collectors and Convenience Factory Methods for Collections [(JEP 269)]. I haven't thought what to add next but I will update README if I add any new things to it.
+This project is born out of curiosity. This project currently consists of custom collectors and Convenience Factory Methods for Collections [(JEP 269)]. I haven't thought what to add next but I will update README if I add any new things to it.
 
 So what is this project essentially? This project currently has 2 pieces of cake:
   - Custom Collectors (Here are all [Collectors].)
@@ -169,6 +169,7 @@ Enjoy.
 TODO:
 * Add additional operations for java.util.Optional.
 * Check if we can add better methods for Collectors.
+* Add comments.
 
    [(JEP 269)]: <http://openjdk.java.net/jeps/269>
    [Collectors]: <https://github.com/savanibharat/custom-collectors/blob/master/src/main/java/com/codingopus/collectors/CustomCollectors.java>
