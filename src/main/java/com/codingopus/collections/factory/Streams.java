@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public final class Streams {
+public interface Streams {
 
 	/**
 	 * Creates a new sequential Stream from a Spliterator.
