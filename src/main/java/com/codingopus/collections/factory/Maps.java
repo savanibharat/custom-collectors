@@ -41,8 +41,7 @@ public interface Maps {
 	/**
 	 * Returns immutable Map containing zero elements.
 	 * 
-	 * @param <E> the {@code Map}'s element type
-	 * @throws NullPointerException if an element is {@code null}
+	 * @param <K, V> the {@code Map}'s element type
 	 * @return an empty {@code Map}
 	 * */
 	public static <K, V> Map<K, V> of() {
@@ -77,6 +76,7 @@ public interface Maps {
 	 * @param v2 the second value
 	 * 
 	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
 	 * @return an {@code Map} containing specified element.
 	 * */
 	public static <K, V> Map<K, V> of(
@@ -105,6 +105,7 @@ public interface Maps {
 	 * @param v3 the third value
 	 * 
 	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
 	 * @return an {@code Map} containing specified element.
 	 * */
 	public static <K, V> Map<K, V> of(
@@ -132,10 +133,11 @@ public interface Maps {
 	 * @param v2 the second value
 	 * @param k3 the third key
 	 * @param v3 the third value
-	 * @param k4 the four key
-	 * @param v4 the four value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
 	 * 
 	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
 	 * @return an {@code Map} containing specified element.
 	 * */
 	public static <K, V> Map<K, V> of(
@@ -164,12 +166,13 @@ public interface Maps {
 	 * @param v2 the second value
 	 * @param k3 the third key
 	 * @param v3 the third value
-	 * @param k4 the four key
-	 * @param v4 the four value
-	 * @param k5 the five key
-	 * @param v5 the five value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
 	 * 
 	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
 	 * @return an {@code Map} containing specified element.
 	 * */
 	public static <K, V> Map<K, V> of(
@@ -188,6 +191,28 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing six entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6) {
@@ -208,6 +233,30 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing seven entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the four key
+	 * @param v4 the four value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7) {
@@ -229,6 +278,32 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing eight entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8) {
@@ -251,6 +326,34 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing nine entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9) {
@@ -274,6 +377,36 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing ten entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10) {
@@ -298,6 +431,38 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing eleven entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * @param k11 the eleventh key
+	 * @param v11 the eleventh value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10, 
@@ -325,6 +490,40 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing twelve entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * @param k11 the eleventh key
+	 * @param v11 the eleventh value
+	 * @param k12 the twelth key
+	 * @param v12 the twelth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> of(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10, 
@@ -353,16 +552,47 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing zero elements.
+	 * 
+	 * @param <K,V> the {@code Map}'s element type
+	 * @return an empty {@code Map}
+	 * */
 	public static <K, V> Map<K, V> ofOrdered() {
 		return Collections.emptyMap();
 	}
 
+	/**
+	 * Returns immutable Map containing one entry.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * 
+	 * @throws NullPointerException if key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1) {
 		ObjectsNonNull.objectsNonNull(k1, v1);
 		return Collections.singletonMap(k1, v1);
 	}
 
+	/**
+	 * Returns immutable Map containing two entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2) {
 
@@ -376,6 +606,22 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing three entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3) {
 
@@ -390,6 +636,24 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing four entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4) {
 
@@ -405,6 +669,26 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing five entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5) {
 
@@ -421,6 +705,28 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing six entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6) {
@@ -441,6 +747,30 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing seven entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the four key
+	 * @param v4 the four value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7) {
@@ -462,6 +792,32 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing eight entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8) {
@@ -483,7 +839,35 @@ public interface Maps {
 		}
 		return Collections.unmodifiableMap(map);
 	}
-
+	
+	/**
+	 * Returns immutable Map containing nine entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9) {
@@ -507,6 +891,36 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing ten entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10) {
@@ -531,6 +945,38 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing eleven entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * @param k11 the eleventh key
+	 * @param v11 the eleventh value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10, 
@@ -558,6 +1004,40 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing twelve entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * @param k11 the eleventh key
+	 * @param v11 the eleventh value
+	 * @param k12 the twelth key
+	 * @param v12 the twelth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofOrdered(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10, 
@@ -585,17 +1065,48 @@ public interface Maps {
 		}
 		return Collections.unmodifiableMap(map);
 	}
-
+	
+	/**
+	 * Returns immutable Map containing zero elements.
+	 * 
+	 * @param <K, V> the {@code Map}'s element type
+	 * @return an empty {@code Map}
+	 * */
 	public static <K, V> Map<K, V> ofSorted() {
 		return Collections.emptyMap();
 	}
 
+	/**
+	 * Returns immutable Map containing one entry.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * 
+	 * @throws NullPointerException if key or value is {@code null}
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1) {
 		ObjectsNonNull.objectsNonNull(k1, v1);
 		return Collections.singletonMap(k1, v1);
 	}
 
+	/**
+	 * Returns immutable Map containing two entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2) {
 
@@ -609,6 +1120,22 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing three entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3) {
 
@@ -623,6 +1150,24 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing four entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4) {
 
@@ -638,6 +1183,26 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing five entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5) {
 
@@ -654,6 +1219,28 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing six entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6) {
@@ -674,6 +1261,30 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing seven entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the four key
+	 * @param v4 the four value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7) {
@@ -695,6 +1306,32 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing eight entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8) {
@@ -717,6 +1354,34 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing nine entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9) {
@@ -740,6 +1405,36 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing ten entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10) {
@@ -764,6 +1459,38 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing eleven entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * @param k11 the eleventh key
+	 * @param v11 the eleventh value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10, 
@@ -791,6 +1518,40 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns immutable Map containing twelve entries.
+	 * 
+	 * @param <K> the  {@code Map}'s key
+	 * @param <V> the  {@code Map}'s value
+	 * @param k1 the first key
+	 * @param v1 the first value
+	 * @param k2 the second key
+	 * @param v2 the second value
+	 * @param k3 the third key
+	 * @param v3 the third value
+	 * @param k4 the fourth key
+	 * @param v4 the fourth value
+	 * @param k5 the fifth key
+	 * @param v5 the fifth value
+	 * @param k6 the sixth key
+	 * @param v6 the sixth value
+	 * @param k7 the seventh key
+	 * @param v7 the seventh value
+	 * @param k8 the eighth key
+	 * @param v8 the eighth value
+	 * @param k9 the ninth key
+	 * @param v9 the ninth value
+	 * @param k10 the tenth key
+	 * @param v10 the tenth value
+	 * @param k11 the eleventh key
+	 * @param v11 the eleventh value
+	 * @param k12 the twelth key
+	 * @param v12 the twelth value
+	 * 
+	 * @throws NullPointerException if any key or value is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	public static <K, V> Map<K, V> ofSorted(
 			K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4, K k5, V v5, 
 			K k6, V v6, K k7, V v7, K k8, V v8, K k9, V v9, K k10, V v10, 
@@ -819,16 +1580,37 @@ public interface Maps {
 		return Collections.unmodifiableMap(map);
 	}
 
+	/**
+	 * Returns an immutable map containing several entries.
+	 * 
+	 * @throws NullPointerException if any key or value in Entry is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	@SafeVarargs
 	public static <K, V> Map<K, V> ofEntries(Entry<K, V>... entries) {
 		return ofEntries(new HashMap<>(), entries);
 	}
 	
+	/**
+	 * Returns an immutable map containing several entries.
+	 * 
+	 * @throws NullPointerException if any key or value in Entry is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	@SafeVarargs
 	public static <K, V> Map<K, V> ofOrderedEntries(Entry<K, V>... entries) {
 		return ofEntries(new LinkedHashMap<>(), entries);
 	}
 	
+	/**
+	 * Returns an immutable map containing several entries.
+	 * 
+	 * @throws NullPointerException if any key or value in Entry is {@code null}
+	 * @throws IllegalArgumentException if keys are duplicate.
+	 * @return an {@code Map} containing specified element.
+	 * */
 	@SafeVarargs
 	public static <K, V> Map<K, V> ofSortedEntries(Entry<K, V>... entries) {
 		return ofEntries(new TreeMap<>(), entries);
@@ -852,7 +1634,7 @@ public interface Maps {
 	}
 	
 	public static <K, V> Entry<K, V> entry(K k, V v) {
-		return new ImmutableMapEntry<K, V>(k, v);
+		return ImmutableMapEntry.of(k, v);
 	}
 
 }
