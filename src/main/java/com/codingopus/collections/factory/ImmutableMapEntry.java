@@ -8,12 +8,17 @@ final class ImmutableMapEntry<K, V> implements Map.Entry<K, V> {
 	private final K k;
 	private final V v;
 
-	ImmutableMapEntry(K k, V v) {
+	private ImmutableMapEntry(K k, V v) {
 
 		this.k = Objects.requireNonNull(k);
 		this.v = Objects.requireNonNull(v);
 	}
 
+	public static <K, V> ImmutableMapEntry<K, V> of(
+			K k, V v) {
+		return new ImmutableMapEntry<K, V>(k, v);
+	}
+	
 	@Override
 	public K getKey() {
 		return this.k;
