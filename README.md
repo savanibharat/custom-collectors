@@ -154,10 +154,12 @@ Let us understand them one by one.
                                            Maps.entry('A', 65), 
                                            Maps.entry('B', 66), 
                                            Maps.entry('C', 67));
+                                           
        Map<Character, Integer> map = Maps.ofOrderedEntries(
                                            Maps.entry('A', 65), 
                                            Maps.entry('B', 66), 
                                            Maps.entry('C', 67));
+                                           
        Map<Character, Integer> map = Maps.ofSortedEntries(
                                            Maps.entry('A', 65), 
                                            Maps.entry('B', 66), 
