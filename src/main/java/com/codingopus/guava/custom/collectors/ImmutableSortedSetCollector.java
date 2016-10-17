@@ -22,6 +22,14 @@ import com.google.common.collect.ImmutableSortedSet;
 
 public final class ImmutableSortedSetCollector<T extends Comparable<?>> {
 
+	/**
+     * @returns a {@link Collector} that collects data in
+     * {@link ImmutableSortedSet} whose elements are
+     * ordered by their natural ordering.
+     *
+     * @param <T> The type of input elements for the new 
+     * collector.
+     * */
 	public static <T extends Comparable<?>>
 	Collector<T, ImmutableSortedSet.Builder<T>, ImmutableSortedSet<T>>
 	toImmutableSortedSetCollector() {
@@ -33,6 +41,14 @@ public final class ImmutableSortedSetCollector<T extends Comparable<?>> {
 						ImmutableSortedSet.Builder<T>::build);
 	}
 	
+	/**
+     * @returns a {@link Collector} that collects data in
+     * {@link ImmutableSortedSet} whose elements are
+     * ordered by reverse of the their natural ordering.
+     *
+     * @param <T> The type of input elements for the new 
+     * collector.
+     * */
 	public static <T extends Comparable<?>>
 	Collector<T, ImmutableSortedSet.Builder<T>, ImmutableSortedSet<T>>
 	toReverseImmutableSortedSetCollector() {

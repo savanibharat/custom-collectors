@@ -22,6 +22,14 @@ import com.google.common.collect.ImmutableSortedMultiset;
 
 public final class ImmutableSortedMultisetCollector<T extends Comparable<?>> {
 
+	/**
+     * @returns a {@link Collector} that collects data in
+     * {@link ImmutableSortedMultiset} whose elements are
+     * ordered by their natural ordering.
+     *
+     * @param <T> The type of input elements for the new 
+     * collector.
+     * */
 	public static <T extends Comparable<?>>
 	Collector<T, ImmutableSortedMultiset.Builder<T>, ImmutableSortedMultiset<T>>
 	toImmutableSortedMultisetCollector() {
@@ -33,6 +41,14 @@ public final class ImmutableSortedMultisetCollector<T extends Comparable<?>> {
 						ImmutableSortedMultiset.Builder<T>::build);
 	}
 	
+	/**
+     * @returns a {@link Collector} that collects data in
+     * {@link ImmutableSortedMultiset} whose elements are
+     * ordered by reverse of the their natural ordering.
+     *
+     * @param <T> The type of input elements for the new 
+     * collector.
+     * */
 	public static <T extends Comparable<?>>
 	Collector<T, ImmutableSortedMultiset.Builder<T>, ImmutableSortedMultiset<T>>
 	toReverseImmutableSortedMultisetCollector() {

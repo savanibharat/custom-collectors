@@ -22,6 +22,13 @@ import com.google.common.collect.ImmutableSet;
 
 public final class ImmutableSetCollector<T> {
 
+	/**
+     * @returns a {@link Collector} that collects data in
+     * {@link ImmutableSet}.
+     *
+     * @param <T> The type of input elements for the new 
+     * collector.
+     * */
 	public static <T> Collector<T, ImmutableSet.Builder<T>, ImmutableSet<T>>
 	toSetCollector() {
 		
